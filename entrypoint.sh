@@ -2,6 +2,16 @@
 
 set -e
 
+echo "image ====> ${INPUT_IMAGE}}"
+echo "registry ====> ${INPUT_REGISTRY}}"
+echo "tag ====> ${INPUT_TAG}}"
+echo "service ====> ${INPUT_SERVICE}}"
+echo "project ====> ${INPUT_PROJECT}}"
+echo "region ====> ${INPUT_REGION}}"
+echo "key ====> ${INPUT_KEY}}"
+echo "envfile ====> ${INPUT_ENVFILE}}"
+echo "serviceyamlfile ====> ${INPUT_SERVICEYAMLFILE}}"
+
 echo "${INPUT_KEY}" | base64 --decode > "$HOME"/gcloud.json
 
 if [ "${INPUT_ENVFILE}" ]
@@ -24,11 +34,6 @@ gcloud auth activate-service-account --key-file="$HOME"/gcloud.json --project "$
 gcloud auth configure-docker
 
 IMAGE="${INPUT_REGISTRY}/${INPUT_IMAGE}:${INPUT_TAG}"
-
-#echo "Image name ==> ${IMAGE}"
-#echo "Project ==> ${INPUT_PROJECT}"
-#
-#docker push "${IMAGE}"
 
 if [ "${INPUT_SERVICEYAMLFILE}" ]
 then
