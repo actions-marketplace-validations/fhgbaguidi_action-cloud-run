@@ -2,15 +2,15 @@
 
 set -e
 
-echo "image ====> ${INPUT_IMAGE}}"
-echo "registry ====> ${INPUT_REGISTRY}}"
-echo "tag ====> ${INPUT_TAG}}"
-echo "service ====> ${INPUT_SERVICE}}"
-echo "project ====> ${INPUT_PROJECT}}"
-echo "region ====> ${INPUT_REGION}}"
-echo "key ====> ${INPUT_KEY}}"
-echo "envfile ====> ${INPUT_ENVFILE}}"
-echo "serviceyamlfile ====> ${INPUT_SERVICEYAMLFILE}}"
+echo "image ====> ${INPUT_IMAGE}"
+echo "registry ====> ${INPUT_REGISTRY}"
+echo "tag ====> ${INPUT_TAG}"
+echo "service ====> ${INPUT_SERVICE}"
+echo "project ====> ${INPUT_PROJECT}"
+echo "region ====> ${INPUT_REGION}"
+echo "key ====> ${INPUT_KEY}"
+echo "envfile ====> ${INPUT_ENVFILE}"
+echo "serviceyamlfile ====> ${INPUT_SERVICEYAMLFILE}"
 
 echo "${INPUT_KEY}" | base64 --decode > "$HOME"/gcloud.json
 
